@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biblioteca</title>
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- o ?v=3 força o navegador a baixar o CSS de novo; some 1 a cada atualização -->
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+  <header class="topo">
+    <img class="marca" src="logo.png" alt="Logo">
+    <p class="lema">Seu lema aqui</p>
+  </header>
+
+  <main>
+    <div class="cabeca">
+      <h1>Biblioteca <span id="contagem" class="contagem"></span></h1>
+      <input id="busca" type="search" placeholder="buscar título, autor ou tag…" autocomplete="off">
+    </div>
+
+    <button id="abrir-filtros" class="btn-filtros" type="button">Filtros</button>
+
+    <div class="layout">
+      <aside id="filtros" class="filtros" aria-label="Filtros"></aside>
+
+      <section class="conteudo">
+        <div class="barra">
+          <div id="ativos" class="ativos"></div>
+          <label class="ordem">ordenar
+            <select id="ordem">
+              <option value="titulo">título (A–Z)</option>
+              <option value="autor">autor (A–Z)</option>
+              <option value="ano">mais antigas</option>
+              <option value="ano-desc">mais recentes</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="bloco-destaques" hidden>
+          <h2 class="rotulo">Em destaque</h2>
+          <ul id="destaques" class="obras"></ul>
+          <h2 class="rotulo">Todo o acervo</h2>
+        </div>
+
+        <ul id="lista" class="obras"></ul>
+        <p id="vazio" class="vazio" hidden>Nenhuma obra encontrada com esses filtros.</p>
+        <button id="mais" class="mais" type="button" hidden>mostrar mais</button>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">Biblioteca &middot; acervo em construção</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
